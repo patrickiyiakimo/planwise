@@ -5,7 +5,7 @@ import { Quote } from 'lucide-react';
 
 const Beliefs = ({ isVisible, beliefsData }) => {
   return (
-    <section id="beliefs" className="py-20 lg:py-28 bg-gradient-to-br from-indigo-50 via-white to-blue-50 overflow-hidden">
+    <section id="beliefs" className="py-20 lg:py-28 bg-gray-900 overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         
         {/* Section Header */}
@@ -22,12 +22,12 @@ const Beliefs = ({ isVisible, beliefsData }) => {
           </div>
 
           {/* Main Title */}
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-300 mb-6">
             {beliefsData.title}
           </h2>
 
           {/* Description */}
-          <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
+          <p className="text-lg lg:text-xl text-gray-300 leading-relaxed">
             {beliefsData.description}
           </p>
         </div>
@@ -38,7 +38,7 @@ const Beliefs = ({ isVisible, beliefsData }) => {
             <div
               key={belief.id}
               className={`
-                group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform
+                group bg-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform
                 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}
               `}
               style={{ transitionDelay: `${index * 100}ms` }}
@@ -49,12 +49,12 @@ const Beliefs = ({ isVisible, beliefsData }) => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+              <h3 className="text-xl font-semibold text-gray-300 mb-3 group-hover:text-indigo-600 transition-colors">
                 {belief.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 {belief.description}
               </p>
 

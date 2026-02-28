@@ -18,29 +18,6 @@ const LoginForm = ({
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
-      {/* Logo */}
-      {/* <div className="text-center mb-8">
-        <a href="/" className="inline-flex items-center space-x-2 group">
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg blur opacity-40 group-hover:opacity-60 transition duration-300"></div>
-            <div className="relative bg-white rounded-lg p-1.5">
-              <Sparkles className="w-5 h-5 text-blue-600" />
-            </div>
-          </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-            planwise
-          </span>
-        </a>
-      </div> */}
-
-      {/* Header */}
-      {/* <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h1>
-        <p className="text-gray-600">
-          Sign in to continue your academic journey with Planwise.
-        </p>
-      </div> */}
-
       {/* Google Login Button */}
       <button
         onClick={onGoogleLogin}
