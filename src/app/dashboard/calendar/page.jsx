@@ -1,8 +1,10 @@
-export default function Calendar() {
-  return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Calendar</h1>
-      <p>Here you can view your calendar events.</p>
-    </div>
-  );
+import CalendarContainer from '@/containers/dashboard/CalendarContainer';
+
+export const metadata = {
+  title: 'Calendar - Planwise | Student Planning App',
+  description: 'Manage your schedule, track deadlines, and organize your academic events.',
+};
+
+export default function CalendarPage() {
+  return <CalendarContainer />;
 }
