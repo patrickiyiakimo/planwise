@@ -1,8 +1,10 @@
-export default function Summaries() {
-  return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Summaries</h1>
-      <p>Here you can view your summaries.</p>
-    </div>
-  );
+import SummariesContainer from '@/containers/dashboard/SummariesContainer';
+
+export const metadata = {
+  title: 'AI PDF Summaries - Planwise | Student Planning App',
+  description: 'Upload PDFs and get instant AI-generated summaries of your study materials.',
+};
+
+export default function SummariesPage() {
+  return <SummariesContainer />;
 }
