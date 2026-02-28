@@ -1,8 +1,10 @@
-export default function MathsSolver() {
-  return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Maths Solver</h1>
-      <p>Here you can solve maths problems.</p>
-    </div>
-  );
+import MathsSolverContainer from '@/containers/dashboard/MathsSolverContainer';
+
+export const metadata = {
+  title: 'AI Math Solver - Planwise | Student Planning App',
+  description: 'Solve any math problem with step-by-step explanations and visualizations.',
+};
+
+export default function MathsSolverPage() {
+  return <MathsSolverContainer />;
 }
