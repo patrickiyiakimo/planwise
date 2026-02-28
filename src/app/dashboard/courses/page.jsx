@@ -1,8 +1,10 @@
-export default function Courses() {
-  return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Courses</h1>
-      <p>Here you can view your courses.</p>
-    </div>
-  );
+import CoursesContainer from '@/containers/dashboard/CoursesContainer';
+
+export const metadata = {
+  title: 'Courses - Planwise | Student Planning App',
+  description: 'Manage your academic courses, track progress, and view assignments.',
+};
+
+export default function CoursesPage() {
+  return <CoursesContainer />;
 }
