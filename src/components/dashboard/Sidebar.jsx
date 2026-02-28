@@ -27,7 +27,7 @@ const Sidebar = ({ user, collapsed, onToggle, onLogout, currentPath }) => {
     { name: 'Maths Solver', href: '/dashboard/maths-solver', icon: BookOpen, badge: 'AI' },
     { name: 'Courses', href: '/dashboard/courses', icon: BookOpen },
     { name: 'Calendar', href: '/dashboard/calendar', icon: Calendar },
-    { name: 'Study Groups', href: '/dashboard/groups', icon: Users },
+    // { name: 'Study Groups', href: '/dashboard/groups', icon: Users },
     { name: 'Analytics', href: '/dashboard/analytics', icon: BarChart },
   ];
 

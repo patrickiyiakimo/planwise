@@ -1,3 +1,5 @@
+// Comment out the problematic import
+// import TasksContainer from '@/containers/dashboard/TasksContainer';
 import TasksContainer from '@/containers/dashboard/TasksContainer';
 
 export const metadata = {
