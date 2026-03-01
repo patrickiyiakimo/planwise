@@ -234,15 +234,15 @@ ${new Date().toLocaleString()}
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-16 z-30">
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-30">
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-lg flex items-center justify-center">
+              {/* <div className="w-10 h-10 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-lg flex items-center justify-center">
                 <Calculator className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <div className="flex items-center space-x-2">
+              </div> */}
+              <div className="text-center md:text-left">
+                <div className="flex items-center justify-center space-x-2">
                   <h1 className="text-2xl font-bold text-gray-900">AI Math Solver</h1>
                   <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-full">
                     BETA

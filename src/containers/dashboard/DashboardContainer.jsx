@@ -272,11 +272,11 @@ const DashboardContainer = ({ children }) => {
       />
 
       {/* Main Content */}
-      <div className={`flex-1 transition-all duration-300 ${sidebarCollapsed ? 'ml-16 md:ml-20' : 'ml-10 md:ml-64'}`}>
-        <Header
+      <div className={`flex-1 transition-all duration-300 ${sidebarCollapsed ? 'ml-0 md:ml-20' : 'ml-10 md:ml-64'}`}>
+        {/* <Header
           user={user}
           onToggleSidebar={toggleSidebar}
-        />
+        /> */}
 
         <main className="p-2">
           {isMainDashboard ? (

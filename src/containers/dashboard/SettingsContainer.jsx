@@ -339,10 +339,10 @@ const SettingsContainer = () => {
   return (
     <div className="min-h-screen bg-gray-50 pb-12">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-16 z-30">
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-30">
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
-            <div>
+            <div className="text-center md:text-left">
               <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
               <p className="text-sm text-gray-500 mt-1">
                 Manage your account preferences and application settings

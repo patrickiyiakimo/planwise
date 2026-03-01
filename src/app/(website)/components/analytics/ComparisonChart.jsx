@@ -27,26 +27,26 @@ const ComparisonChart = ({ data }) => {
             </div>
             <div className="relative h-6">
               {/* User bar */}
-              <div
+              {/* <div
                 className="absolute h-full bg-indigo-600 rounded-l-lg"
                 style={{ width: `${(item.user / maxValue) * 100}%` }}
               >
                 <span className="absolute right-1 top-1/2 transform -translate-y-1/2 text-xs text-white opacity-0 group-hover:opacity-100">
                   You
                 </span>
-              </div>
+              </div> */}
               {/* Class average bar */}
-              <div
+              {/* <div
                 className="absolute h-full bg-gray-300 rounded-r-lg"
                 style={{ 
                   width: `${(item.class / maxValue) * 100}%`,
                   left: `${(item.user / maxValue) * 100}%`
                 }}
               >
-                <span className="absolute left-1 top-1/2 transform -translate-y-1/2 text-xs text-gray-600 opacity-0 group-hover:opacity-100">
+                <span className="absolute right-10 top-1/2 transform -translate-y-1/2 text-xs text-gray-600 opacity-0 group-hover:opacity-100">
                   Class
                 </span>
-              </div>
+              </div> */}
             </div>
             <div className="flex justify-between text-xs text-gray-400 mt-1">
               <span>You: {item.user}%</span>
