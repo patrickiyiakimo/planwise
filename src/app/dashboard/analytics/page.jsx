@@ -1,8 +1,10 @@
-export default function Analytics() {
-  return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Analytics</h1>
-      <p>Here you can view your analytics data.</p>
-    </div>
-  );
+import AnalyticsContainer from '@/containers/dashboard/AnalyticsContainer';
+
+export const metadata = {
+  title: 'Analytics - Planwise | Student Planning App',
+  description: 'Track your academic performance, study habits, and progress over time.',
+};
+
+export default function AnalyticsPage() {
+  return <AnalyticsContainer />;
 }
