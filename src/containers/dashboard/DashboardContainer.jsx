@@ -24,7 +24,7 @@ import Header from '@/app/(website)/components/dashboard/Header';
 const DashboardContainer = ({ children }) => {
   const router = useRouter();
   const pathname = usePathname();
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [dashboardData, setDashboardData] = useState({
@@ -272,13 +272,13 @@ const DashboardContainer = ({ children }) => {
       />
 
       {/* Main Content */}
-      <div className={`flex-1 transition-all duration-300 ${sidebarCollapsed ? 'ml-20' : 'ml-64'}`}>
+      <div className={`flex-1 transition-all duration-300 ${sidebarCollapsed ? 'ml-16 md:ml-20' : 'ml-10 md:ml-64'}`}>
         <Header
           user={user}
           onToggleSidebar={toggleSidebar}
         />
 
-        <main className="p-6">
+        <main className="p-2">
           {isMainDashboard ? (
             // Main Dashboard View
             <div className="space-y-6">
