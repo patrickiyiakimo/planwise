@@ -283,7 +283,7 @@ const DashboardContainer = ({ children }) => {
             // Main Dashboard View
             <div className="space-y-6">
               {/* Welcome Banner */}
-              <div className="bg-gradient-to-r from-indigo-600 to-blue-600 rounded-2xl p-6 text-white">
+              <div className="bg-gradient-to-r mt-10 from-indigo-600 to-blue-600 rounded-2xl p-6 text-white">
                 <h1 className="text-2xl font-bold mb-2">Welcome back, {user.name}! 👋</h1>
                 <p className="text-indigo-100">Here's your academic overview for today. You're making great progress!</p>
               </div>
