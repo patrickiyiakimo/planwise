@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Pricing from '@/components/pricing/Pricing';
+import Pricing from '@/app/(website)/components/pricing/Pricing';
 
 const PricingContainer = () => {
   const [isVisible, setIsVisible] = useState(false);

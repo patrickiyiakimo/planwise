@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import LoginForm from '@/components/login/LoginForm';
+import LoginForm from '@/app/(website)/components/login/LoginForm';
 
 const LoginContainer = () => {
   const router = useRouter();

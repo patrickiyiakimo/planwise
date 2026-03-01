@@ -12,19 +12,19 @@ import {
   LineChart,
   Award
 } from 'lucide-react';
-import AnalyticsHeader from '@/components/analytics/AnalyticsHeader';
-import PerformanceOverview from '@/components/analytics/PerformanceOverview';
-import GradeDistribution from '@/components/analytics/GradeDistribution';
-import StudyTimeChart from '@/components/analytics/StudyTimeChart';
-import TaskCompletionTrend from '@/components/analytics/TaskCompletionTrend';
-import SubjectPerformance from '@/components/analytics/SubjectPerformance';
-import ProductivityInsights from '@/components/analytics/ProductivityInsights';
-import WeeklyActivity from '@/components/analytics/WeeklyActivity';
-import GradePredictor from '@/components/analytics/GradePredictor';
-import StudyStreak from '@/components/analytics/StudyStreak';
-import ComparisonChart from '@/components/analytics/ComparisonChart';
-import ExportReports from '@/components/analytics/ExportReports';
-import DateRangePicker from '@/components/analytics/DateRangePicker';
+import AnalyticsHeader from '@/app/(website)/components/analytics/AnalyticsHeader';
+import PerformanceOverview from '@/app/(website)/components/analytics/PerformanceOverview';
+import GradeDistribution from '@/app/(website)/components/analytics/GradeDistribution';
+import StudyTimeChart from '@/app/(website)/components/analytics/StudyTimeChart';
+import TaskCompletionTrend from '@/app/(website)/components/analytics/TaskCompletionTrend';
+import SubjectPerformance from '@/app/(website)/components/analytics/SubjectPerformance';
+import ProductivityInsights from '@/app/(website)/components/analytics/ProductivityInsights';
+import WeeklyActivity from '@/app/(website)/components/analytics/WeeklyActivity';
+import GradePredictor from '@/app/(website)/components/analytics/GradePredictor';
+import StudyStreak from '@/app/(website)/components/analytics/StudyStreak';
+import ComparisonChart from '@/app/(website)/components/analytics/ComparisonChart';
+import ExportReports from '@/app/(website)/components/analytics/ExportReports';
+import DateRangePicker from '@/app/(website)/components/analytics/DateRangePicker';
 
 const AnalyticsContainer = () => {
   const [loading, setLoading] = useState(true);

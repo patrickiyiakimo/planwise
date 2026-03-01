@@ -12,13 +12,13 @@ import {
   Share2,
   Copy
 } from 'lucide-react';
-import ProblemInput from '@/components/maths-solver/ProblemInput';
-import SolutionDisplay from '@/components/maths-solver/SolutionDisplay';
-import StepByStep from '@/components/maths-solver/StepByStep';
-import GraphVisualization from '@/components/maths-solver/GraphVisualization';
-import HistorySidebar from '@/components/maths-solver/HistorySidebar';
-import MathKeyboard from '@/components/maths-solver/MathKeyboard';
-import TopicSelector from '@/components/maths-solver/TopicSelector';
+import ProblemInput from '@/app/(website)/components/maths-solver/ProblemInput';
+import SolutionDisplay from '@/app/(website)/components/maths-solver/SolutionDisplay';
+import StepByStep from '@/app/(website)/components/maths-solver/StepByStep';
+import GraphVisualization from '@/app/(website)/components/maths-solver/GraphVisualization';
+import HistorySidebar from '@/app/(website)/components/maths-solver/HistorySidebar';
+import MathKeyboard from '@/app/(website)/components/maths-solver/MathKeyboard';
+import TopicSelector from '@/app/(website)/components/maths-solver/TopicSelector';
 
 const MathsSolverContainer = () => {
   const [problem, setProblem] = useState('');

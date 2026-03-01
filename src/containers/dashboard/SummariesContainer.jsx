@@ -14,12 +14,12 @@ import {
   Trash2,
   BookOpen
 } from 'lucide-react';
-import UploadSection from '@/components/summaries/UploadSection';
-import SummaryList from '@/components/summaries/SummaryList';
-import SummaryFilters from '@/components/summaries/SummaryFilters';
-import ProcessingStatus from '@/components/summaries/ProcessingStatus';
-import SummaryStats from '@/components/summaries/SummaryStats';
-import SummaryViewer from '@/components/summaries/SummaryViewer';
+import UploadSection from '@/app/(website)/components/summaries/UploadSection';
+import SummaryList from '@/app/(website)/components/summaries/SummaryList';
+import SummaryFilters from '@/app/(website)/components/summaries/SummaryFilters';
+import ProcessingStatus from '@/app/(website)/components/summaries/ProcessingStatus';
+import SummaryStats from '@/app/(website)/components/summaries/SummaryStats';
+import SummaryViewer from '@/app/(website)/components/summaries/SummaryViewer';
 
 const SummariesContainer = () => {
   const [view, setView] = useState('grid'); // 'grid', 'list'

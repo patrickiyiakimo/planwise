@@ -13,11 +13,11 @@ import {
   Download,
   Upload
 } from 'lucide-react';
-import CourseGrid from '@/components/courses/CourseGrid';
-import CourseDetails from '@/components/courses/CourseDetails';
-import CourseForm from '@/components/courses/CourseForm';
-import CourseFilters from '@/components/courses/CourseFilters';
-import CourseStats from '@/components/courses/CourseStats';
+import CourseGrid from '@/app/(website)/components/courses/CourseGrid';
+import CourseDetails from '@/app/(website)/components/courses/CourseDetails';
+import CourseForm from '@/app/(website)/components/courses/CourseForm';
+import CourseFilters from '@/app/(website)/components/courses/CourseFilters';
+import CourseStats from '@/app/(website)/components/courses/CourseStats';
 
 const CoursesContainer = () => {
   const [view, setView] = useState('grid'); // 'grid', 'list', 'calendar'

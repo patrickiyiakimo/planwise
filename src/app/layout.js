@@ -1,7 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
-import FooterContainer from "@/containers/footer/FooterContainer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,17 +12,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Planwise - AI-Powered Project Management",
-  description: "Planwise is an AI-powered project management tool that helps students plan, track, and execute projects efficiently. Planwise streamlines students workflows and boosts productivity.",
+  title: "Planwise - AI-Powered Student Planning App",
+  description: "Planwise helps students plan, track, and execute their academic work efficiently with AI-powered tools.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Navbar />
         {children}
-        <FooterContainer />
       </body>
     </html>
   );

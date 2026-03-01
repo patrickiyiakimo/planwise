@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Beliefs from '@/components/beliefs/Beliefs';
+import Beliefs from '@/app/(website)/components/beliefs/Beliefs';
 
 const BeliefsContainer = () => {
   const [isVisible, setIsVisible] = useState(false);

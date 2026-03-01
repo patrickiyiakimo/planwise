@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { HelpCircle, Search, BookOpen, MessageCircle, FileText, Video, Mail, MessageSquare } from 'lucide-react';
-import HelpHeader from '@/components/help/HelpHeader';
-import SearchBar from '@/components/help/SearchBar';
-import QuickLinks from '@/components/help/QuickLinks';
-import FAQCategory from '@/components/help/FAQCategory';
-import ContactSupport from '@/components/help/ContactSupport';
-import HelpResources from '@/components/help/HelpResources';
-import HelpSidebar from '@/components/help/HelpSidebar';
+import HelpHeader from '@/app/(website)/components/help/HelpHeader';
+import SearchBar from '@/app/(website)/components/help/SearchBar';
+import QuickLinks from '@/app/(website)/components/help/QuickLinks';
+import FAQCategory from '@/app/(website)/components/help/FAQCategory';
+import ContactSupport from '@/app/(website)/components/help/ContactSupport';
+import HelpResources from '@/app/(website)/components/help/HelpResources';
+import HelpSidebar from '@/app/(website)/components/help/HelpSidebar';
 
 const HelpContainer = () => {
   const [searchQuery, setSearchQuery] = useState('');

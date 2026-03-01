@@ -1,5 +1,3 @@
-// import DashboardContainer from '@/containers/dashboard/DashboardContainer';
-
 import DashboardContainer from "@/containers/dashboard/DashboardContainer";
 
 export const metadata = {

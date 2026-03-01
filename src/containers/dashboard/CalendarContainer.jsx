@@ -13,11 +13,11 @@ import {
   Bell,
   Download
 } from 'lucide-react';
-import CalendarView from '@/components/calendar/CalendarView';
-import EventModal from '@/components/calendar/EventModal';
-import CalendarFilters from '@/components/calendar/CalendarFilters';
-import MiniCalendar from '@/components/calendar/MiniCalendar';
-import UpcomingEvents from '@/components/calendar/UpcomingEvents';
+import CalendarView from '@/app/(website)/components/calendar/CalendarView';
+import EventModal from '@/app/(website)/components/calendar/EventModal';
+import CalendarFilters from '@/app/(website)/components/calendar/CalendarFilters';
+import MiniCalendar from '@/app/(website)/components/calendar/MiniCalendar';
+import UpcomingEvents from '@/app/(website)/components/calendar/UpcomingEvents';
 
 const CalendarContainer = () => {
   const [currentDate, setCurrentDate] = useState(new Date());

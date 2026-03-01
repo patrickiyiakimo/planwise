@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useCallback } from 'react';
-import Hero from '@/components/hero/Hero';
+import Hero from '@/app/(website)/components/hero/Hero';
 
 const HeroContainer = () => {
   const [isVisible, setIsVisible] = useState(false);

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import FaqSection from '@/components/faq/FaqSection';
-import SupportSection from '@/components/faq/SupportSection';
+import FaqSection from '@/app/(website)/components/faq/FaqSection';
+import SupportSection from '@/app/(website)/components/faq/SupportSection';
 
 const FaqContainer = () => {
   const [activeCategory, setActiveCategory] = useState('general');

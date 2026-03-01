@@ -1,273 +1,25 @@
-// "use client";
-
-// import React, { useState, useEffect } from 'react';
-// import { useRouter } from 'next/navigation';
-// import WelcomeHeader from '@/components/dashboard/WelcomeHeader';
-// import DashboardStats from '@/components/dashboard/DashboardStats';
-// import UpcomingTasks from '@/components/dashboard/UpcomingTasks';
-// import RecentSummaries from '@/components/dashboard/RecentSummaries';
-// import StudyProgress from '@/components/dashboard/StudyProgress';
-// import QuickActions from '@/components/dashboard/QuickActions';
-// import CalendarWidget from '@/components/dashboard/CalendarWidget';
-
-// const DashboardContainer = () => {
-//   const router = useRouter();
-//   const [user, setUser] = useState(null);
-//   const [loading, setLoading] = useState(true);
-//   const [dashboardData, setDashboardData] = useState({
-//     stats: {},
-//     tasks: [],
-//     summaries: [],
-//     progress: {},
-//     calendar: []
-//   });
-
-//   // Simulate fetching user data
-//   useEffect(() => {
-//     const fetchDashboardData = async () => {
-//       setLoading(true);
-      
-//       // Simulate API call
-//       await new Promise(resolve => setTimeout(resolve, 1000));
-      
-//       // Mock user data
-//       setUser({
-//         id: '1',
-//         name: 'Alex Johnson',
-//         email: 'alex@student.edu',
-//         plan: 'Pro',
-//         avatar: 'AJ',
-//         joinDate: '2024-01-15'
-//       });
-
-//       // Mock dashboard data
-//       setDashboardData({
-//         stats: {
-//           totalCourses: 6,
-//           completedTasks: 24,
-//           pendingTasks: 8,
-//           studyHours: 42,
-//           pdfSummaries: 15,
-//           upcomingDeadlines: 3
-//         },
-//         tasks: [
-//           {
-//             id: 't1',
-//             title: 'Calculus III - Problem Set 7',
-//             course: 'MATH 301',
-//             dueDate: '2024-03-25T23:59:00',
-//             priority: 'high',
-//             status: 'pending'
-//           },
-//           {
-//             id: 't2',
-//             title: 'Read Chapter 5: Quantum Mechanics',
-//             course: 'PHYS 202',
-//             dueDate: '2024-03-23T23:59:00',
-//             priority: 'medium',
-//             status: 'pending'
-//           },
-//           {
-//             id: 't3',
-//             title: 'Submit Research Paper Draft',
-//             course: 'ENGL 210',
-//             dueDate: '2024-03-28T23:59:00',
-//             priority: 'high',
-//             status: 'pending'
-//           },
-//           {
-//             id: 't4',
-//             title: 'Group Meeting - Project Alpha',
-//             course: 'CS 450',
-//             dueDate: '2024-03-22T15:00:00',
-//             priority: 'medium',
-//             status: 'pending'
-//           },
-//           {
-//             id: 't5',
-//             title: 'Review for Midterm Exam',
-//             course: 'BIOL 110',
-//             dueDate: '2024-03-30T09:00:00',
-//             priority: 'low',
-//             status: 'pending'
-//           }
-//         ],
-//         summaries: [
-//           {
-//             id: 's1',
-//             title: 'Machine Learning Fundamentals',
-//             fileName: 'ml_lecture_notes.pdf',
-//             date: '2024-03-20',
-//             pages: 24,
-//             summary: 'This document covers supervised learning algorithms including linear regression, decision trees, and neural networks...',
-//             tokens: 1250
-//           },
-//           {
-//             id: 's2',
-//             title: 'Organic Chemistry Reactions',
-//             fileName: 'ochem_chapter_7.pdf',
-//             date: '2024-03-18',
-//             pages: 18,
-//             summary: 'Chapter 7 focuses on alkene reactions including addition, elimination, and substitution mechanisms with detailed mechanisms...',
-//             tokens: 980
-//           },
-//           {
-//             id: 's3',
-//             title: 'Renaissance Art History',
-//             fileName: 'arthist_lecture_12.pdf',
-//             date: '2024-03-15',
-//             pages: 32,
-//             summary: 'This lecture examines the works of Michelangelo, Leonardo da Vinci, and Raphael during the High Renaissance period...',
-//             tokens: 1560
-//           }
-//         ],
-//         progress: {
-//           courses: [
-//             { id: 'c1', name: 'MATH 301', progress: 75, color: 'blue' },
-//             { id: 'c2', name: 'PHYS 202', progress: 45, color: 'green' },
-//             { id: 'c3', name: 'CS 450', progress: 90, color: 'purple' },
-//             { id: 'c4', name: 'ENGL 210', progress: 60, color: 'yellow' },
-//             { id: 'c5', name: 'BIOL 110', progress: 30, color: 'red' }
-//           ],
-//           weeklyStudyTime: [
-//             { day: 'Mon', hours: 3.5 },
-//             { day: 'Tue', hours: 4.0 },
-//             { day: 'Wed', hours: 2.5 },
-//             { day: 'Thu', hours: 5.0 },
-//             { day: 'Fri', hours: 3.0 },
-//             { day: 'Sat', hours: 2.0 },
-//             { day: 'Sun', hours: 1.5 }
-//           ]
-//         },
-//         calendar: [
-//           { date: '2024-03-22', events: ['Group Meeting - CS450'] },
-//           { date: '2024-03-23', events: ['Physics Assignment Due'] },
-//           { date: '2024-03-25', events: ['Calculus Problem Set Due'] }
-//         ]
-//       });
-      
-//       setLoading(false);
-//     };
-
-//     fetchDashboardData();
-//   }, []);
-
-//   const handleTaskComplete = (taskId) => {
-//     console.log('Task completed:', taskId);
-//     // Update tasks state
-//     setDashboardData(prev => ({
-//       ...prev,
-//       tasks: prev.tasks.map(task =>
-//         task.id === taskId ? { ...task, status: 'completed' } : task
-//       )
-//     }));
-//   };
-
-//   const handleViewSummary = (summaryId) => {
-//     console.log('View summary:', summaryId);
-//     router.push(`/dashboard/summaries/${summaryId}`);
-//   };
-
-//   const handleCreateSummary = () => {
-//     router.push('/dashboard/upload-pdf');
-//   };
-
-//   const handleAddTask = () => {
-//     router.push('/dashboard/tasks/new');
-//   };
-
-//   const handleViewAllTasks = () => {
-//     router.push('/dashboard/tasks');
-//   };
-
-//   const handleViewAllSummaries = () => {
-//     router.push('/dashboard/summaries');
-//   };
-
-//   const handleJoinStudyGroup = () => {
-//     router.push('/dashboard/study-groups');
-//   };
-
-//   const handleStartStudySession = () => {
-//     console.log('Starting study session');
-//     // Open study timer modal or navigate to study session
-//   };
-
-//   if (loading) {
-//     return (
-//       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-//         <div className="text-center">
-//           <div className="w-16 h-16 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-//           <p className="text-gray-600">Loading your dashboard...</p>
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className="min-h-screen bg-gray-50">
-//       <div className="container mx-auto px-4 py-8">
-//         {/* Welcome Header */}
-//         <WelcomeHeader user={user} />
-        
-//         {/* Stats Overview */}
-//         <DashboardStats stats={dashboardData.stats} />
-        
-//         {/* Main Grid Layout */}
-//         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-//           {/* Left Column - Tasks and Progress */}
-//           <div className="lg:col-span-2 space-y-8">
-//             <UpcomingTasks
-//               tasks={dashboardData.tasks}
-//               onTaskComplete={handleTaskComplete}
-//               onViewAll={handleViewAllTasks}
-//               onAddTask={handleAddTask}
-//             />
-            
-//             <StudyProgress progress={dashboardData.progress} />
-//           </div>
-          
-//           {/* Right Column - Summaries and Quick Actions */}
-//           <div className="space-y-8">
-//             <QuickActions
-//               onCreateSummary={handleCreateSummary}
-//               onAddTask={handleAddTask}
-//               onJoinStudyGroup={handleJoinStudyGroup}
-//               onStartStudySession={handleStartStudySession}
-//             />
-            
-//             <RecentSummaries
-//               summaries={dashboardData.summaries}
-//               onViewSummary={handleViewSummary}
-//               onViewAll={handleViewAllSummaries}
-//               onCreateNew={handleCreateSummary}
-//             />
-            
-//             <CalendarWidget events={dashboardData.calendar} />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default DashboardContainer;
-
-
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import Sidebar from '@/components/dashboard/Sidebar';
-import Header from '@/components/dashboard/Header';
-import StatsCards from '@/components/dashboard/StatsCards';
-import TasksWidget from '@/components/dashboard/TasksWidget';
-import SummariesWidget from '@/components/dashboard/SummariesWidget';
-import ProgressWidget from '@/components/dashboard/ProgressWidget';
-import CalendarWidget from '@/components/dashboard/CalendarWidget';
-import ActivityFeed from '@/components/dashboard/ActivityFeed';
-import StudyGroupsWidget from '@/components/dashboard/StudyGroupsWidget';
+import StudyGroupsWidget from '@/app/(website)/components/dashboard/StudyGroupsWidget';
+import CalendarWidget from '@/app/(website)/components/dashboard/CalendarWidget';
+import ActivityFeed from '@/app/(website)/components/dashboard/ActivityFeed';
+import SummariesWidget from '@/app/(website)/components/dashboard/SummariesWidget';
+import ProgressWidget from '@/app/(website)/components/dashboard/ProgressWidget';
+import TasksWidget from '@/app/(website)/components/dashboard/TasksWidget';
+import StatsCards from '@/app/(website)/components/dashboard/StatsCards';
+import Sidebar from '@/app/(website)/components/dashboard/Sidebar';
+import Header from '@/app/(website)/components/dashboard/Header';
+// import Sidebar from '@/components/dashboard/Sidebar';
+// import Header from '@/components/dashboard/Header';
+// import StatsCards from '@/components/dashboard/StatsCards';
+// import TasksWidget from '@/components/dashboard/TasksWidget';
+// import SummariesWidget from '@/components/dashboard/SummariesWidget';
+// import ProgressWidget from '@/components/dashboard/ProgressWidget';
+// import CalendarWidget from '@/components/dashboard/CalendarWidget';
+// import ActivityFeed from '@/components/dashboard/ActivityFeed';
+// import StudyGroupsWidget from '@/components/dashboard/StudyGroupsWidget';
 
 const DashboardContainer = ({ children }) => {
   const router = useRouter();
@@ -511,7 +263,7 @@ const DashboardContainer = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
-      <Sidebar 
+      <Sidebar
         user={user}
         collapsed={sidebarCollapsed}
         onToggle={toggleSidebar}
@@ -521,7 +273,7 @@ const DashboardContainer = ({ children }) => {
 
       {/* Main Content */}
       <div className={`flex-1 transition-all duration-300 ${sidebarCollapsed ? 'ml-20' : 'ml-64'}`}>
-        <Header 
+        <Header
           user={user}
           onToggleSidebar={toggleSidebar}
         />
@@ -569,7 +321,7 @@ const DashboardContainer = ({ children }) => {
               {/* Bottom Grid - Calendar and Study Groups */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <CalendarWidget events={dashboardData.calendar} />
-                <StudyGroupsWidget 
+                <StudyGroupsWidget
                   groups={dashboardData.studyGroups}
                   onJoinGroup={handleJoinStudyGroup}
                   onStartSession={handleStartStudySession}

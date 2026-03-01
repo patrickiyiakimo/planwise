@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import About from '@/components/about/About';
+import About from '@/app/(website)/components/about/About';
 
 const AboutContainer = () => {
   const [isVisible, setIsVisible] = useState(false);

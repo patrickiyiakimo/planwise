@@ -12,16 +12,16 @@ import {
   AlertTriangle,
   Save
 } from 'lucide-react';
-import SettingsSidebar from '@/components/settings/SettingsSidebar';
-import ProfileSettings from '@/components/settings/ProfileSettings';
-import AccountSettings from '@/components/settings/AccountSettings';
-import NotificationSettings from '@/components/settings/NotificationSettings';
-import PrivacySettings from '@/components/settings/PrivacySettings';
-import SubscriptionSettings from '@/components/settings/SubscriptionSettings';
-import AppearanceSettings from '@/components/settings/AppearanceSettings';
-import SecuritySettings from '@/components/settings/SecuritySettings';
-import ApiSettings from '@/components/settings/ApiSettings';
-import DangerZone from '@/components/settings/DangerZone';
+import SettingsSidebar from '@/app/(website)/components/settings/SettingsSidebar';
+import ProfileSettings from '@/app/(website)/components/settings/ProfileSettings';
+import AccountSettings from '@/app/(website)/components/settings/AccountSettings';
+import NotificationSettings from '@/app/(website)/components/settings/NotificationSettings';
+import PrivacySettings from '@/app/(website)/components/settings/PrivacySettings';
+import SubscriptionSettings from '@/app/(website)/components/settings/SubscriptionSettings';
+import AppearanceSettings from '@/app/(website)/components/settings/AppearanceSettings';
+import SecuritySettings from '@/app/(website)/components/settings/SecuritySettings';
+import ApiSettings from '@/app/(website)/components/settings/ApiSettings';
+import DangerZone from '@/app/(website)/components/settings/DangerZone';
 
 const SettingsContainer = () => {
   const [activeTab, setActiveTab] = useState('profile');

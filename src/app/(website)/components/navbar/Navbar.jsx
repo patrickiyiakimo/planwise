@@ -186,17 +186,15 @@ const Navbar = () => {
 
             {/* Action Buttons */}
             <div className="hidden md:flex items-center space-x-3">
-             <Link href="/login">
+              <Link href="/login" target="_blank" rel="noopener noreferrer">
               <button 
-                onClick={() => router.push('/login')}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
               >
                 Log in
               </button>
-             </Link>
-              <Link href="/signup">
+              </Link>
+              < Link href="/signup" target="_blank" rel="noopener noreferrer">
               <button 
-                onClick={() => router.push('/signup')}
                 className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
                 Sign up free
@@ -278,8 +276,8 @@ const Navbar = () => {
           {/* Mobile Action Buttons */}
           <div className="p-4 border-t border-gray-100 space-y-3">
             <button 
-              onClick={() => {
-                router.push('/login');
+             onClick={() => {
+                window.open('/login', '_blank');
                 setIsMenuOpen(false);
               }}
               className="w-full px-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
@@ -288,7 +286,7 @@ const Navbar = () => {
             </button>
             <button 
               onClick={() => {
-                router.push('/signup');
+                window.open('/signup', '_blank');
                 setIsMenuOpen(false);
               }}
               className="w-full px-4 py-3 text-base font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md"

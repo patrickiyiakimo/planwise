@@ -10,11 +10,11 @@ import {
   ChevronDown,
   Search
 } from 'lucide-react';
-import TaskList from '@/components/tasks/TaskList';
-import TaskFilters from '@/components/tasks/TaskFilters';
-import CreateTaskModal from '@/components/tasks/CreateTaskModal';
-import TaskStats from '@/components/tasks/TaskStats';
-import TaskCalendar from '@/components/tasks/TaskCalendar';
+import TaskList from '@/app/(website)/components/tasks/TaskList';
+import TaskFilters from '@/app/(website)/components/tasks/TaskFilters';
+import CreateTaskModal from '@/app/(website)/components/tasks/CreateTaskModal';
+import TaskStats from '@/app/(website)/components/tasks/TaskStats';
+import TaskCalendar from '@/app/(website)/components/tasks/TaskCalendar';
 
 const TasksContainer = () => {
   const [view, setView] = useState('list'); // 'list', 'grid', 'calendar'

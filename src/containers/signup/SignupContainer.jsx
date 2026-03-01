@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import SignupForm from '@/components/signup/SignupForm';
-import SignupImage from '@/components/signup/SignupImage';
+import SignupForm from '@/app/(website)/components/signup/SignupForm';
+import SignupImage from '@/app/(website)/components/signup/SignupImage';
 
 const SignupContainer = () => {
   const router = useRouter();
