@@ -48,11 +48,26 @@ const DashboardContainer = ({ children }) => {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Mock user data
+      // // Mock user data
+      // setUser({
+      //   id: '1',
+      //   name: 'Alex Johnson',
+      //   email: 'alex.johnson@university.edu',
+      //   plan: 'Pro',
+      //   avatar: 'AJ',
+      //   joinDate: '2024-01-15',
+      //   university: 'Stanford University',
+      //   course: 'Computer Science',
+      //   year: '3rd Year'
+      // });
+
+      //update to use fullname from localStorage
+      const storedUser = JSON.parse(localStorage.getItem('user'));
       setUser({
-        id: '1',
-        name: 'Alex Johnson',
-        email: 'alex.johnson@university.edu',
+        id: storedUser?.id || '1',
+        name: storedUser?.name || 'Alex Johnson',
+        fullname: storedUser?.fullname || 'Alex Johnson',
+        email: storedUser?.email || 'alex.johnson@university.edu',
         plan: 'Pro',
         avatar: 'AJ',
         joinDate: '2024-01-15',
@@ -241,8 +256,28 @@ const DashboardContainer = ({ children }) => {
     router.push('/dashboard/study-session');
   };
 
-  const handleLogout = () => {
-    router.push('/');
+  // const handleLogout = () => {
+  //   router.push('/');
+  // };
+
+  //handle logout with API call
+  const handleLogout = async () => {
+    try {     
+      const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT || 'http://localhost:5000/api';
+      const response = await fetch(`${API_ENDPOINT}/auth/logout`, {
+        method: 'POST',
+        credentials: 'include'
+      });
+      if (!response.ok) {
+        throw new Error('Logout failed. Please try again.');
+      }
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      router.push('/');
+    } catch (error) {
+      console.error('Logout error:', error);
+      alert('Logout failed. Please try again.');
+    }
   };
 
   const toggleSidebar = () => {
@@ -283,10 +318,23 @@ const DashboardContainer = ({ children }) => {
             // Main Dashboard View
             <div className="space-y-6">
               {/* Welcome Banner */}
-              <div className="bg-gradient-to-r mt-10 from-indigo-600 to-blue-600 rounded-2xl p-6 text-white">
-                <h1 className="text-2xl font-bold mb-2">Welcome back, {user.name}! 👋</h1>
+              {/* <div className="bg-gradient-to-r mt-10 from-indigo-600 to-blue-600 rounded-2xl p-6 text-white">
+                <h1 className="text-2xl font-bold mb-2">Welcome back, {user.fullname}! 👋</h1>
                 <p className="text-indigo-100">Here's your academic overview for today. You're making great progress!</p>
+              </div> */}
+
+              <div className="space-y-6">
+              {/* Welcome Banner - Now using user.fullname */}
+              <div className="bg-gradient-to-r mt-10 from-indigo-600 to-blue-600 rounded-2xl p-6 text-white">
+                <h1 className="text-2xl font-bold mb-2">
+                  Welcome back, {user.fullname || user.name || 'Student'}! 👋
+                </h1>
+                <p className="text-indigo-100">
+                  Here's your academic overview for today. You're making great progress!
+                </p>
               </div>
+              </div>
+
 
               {/* Stats Cards */}
               <StatsCards stats={dashboardData.stats} />
