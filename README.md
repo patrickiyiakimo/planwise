@@ -68,14 +68,14 @@ Presentational Components: Focus solely on UI rendering with props
 Example:
 
 jsx
-// Container (handles logic)
+<!-- // Container (handles logic) -->
 const TasksContainer = () => {
   const [tasks, setTasks] = useState([]);
   const handleComplete = (id) => { ... };
   return <TaskList tasks={tasks} onComplete={handleComplete} />;
 };
 
-// Component (handles UI)
+<!-- // Component (handles UI) -->
 const TaskList = ({ tasks, onComplete }) => (
   <div>{tasks.map(task => (
     <TaskCard key={task.id} task={task} onComplete={onComplete} />
