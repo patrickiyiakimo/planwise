@@ -49,65 +49,56 @@ const LoginContainer = () => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  const newErrors = validateForm();
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors);
+    return;
+  }
+
+  setIsLoading(true);
+  setApiError('');
+
+  try {
+    const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT || 'http://localhost:5000/api';
     
-    const newErrors = validateForm();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
+    const response = await fetch(`${API_ENDPOINT}/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password,
+        remember_me: formData.rememberMe // Send the rememberMe value from your form
+      }),
+      credentials: 'include',
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Invalid email or password. Please try again.');
     }
 
-    setIsLoading(true);
-    setApiError('');
-
-    try {
-      const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT || 'http://localhost:5000/api';
-      
-      console.log('Attempting login with:', { email: formData.email }); // Don't log password
-      
-      const response = await fetch(`${API_ENDPOINT}/auth/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
-        credentials: 'include', // CRITICAL: This ensures cookies are sent and received
-      });
-
-      const data = await response.json();
-      console.log('Login response:', { status: response.status, data });
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Login failed. Please check your credentials.');
-      }
-
-      // Store user data in localStorage for UI
-      if (data.data) {
-        localStorage.setItem('user', JSON.stringify(data.data));
-        console.log('User data stored:', data.data);
-      } else if (data.user) {
-        // Fallback in case your API uses a different structure
-        localStorage.setItem('user', JSON.stringify(data.user));
-        console.log('User data stored:', data.user);
-      }
-
-      // Note: The access token is in HTTP-only cookies, so we don't store it in localStorage
-      // This is more secure!
-
-      // Redirect to dashboard
-      router.push('/dashboard');
-      
-    } catch (error) {
-      console.error('Login error:', error);
-      setApiError(error.message || 'Login failed. Please try again.');
-    } finally {
-      setIsLoading(false);
+    // Store user data in localStorage for UI
+    if (data.data) {
+      localStorage.setItem('user', JSON.stringify(data.data));
     }
-  };
+
+    router.push('/dashboard');
+  } catch (error) {
+    console.error('Login error:', error);
+    setApiError(error.message || 'Login failed. Please try again.');
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+
+
 
   const handleGoogleLogin = async () => {
     setGoogleLoading(true);

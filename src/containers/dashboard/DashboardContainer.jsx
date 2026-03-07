@@ -15,7 +15,7 @@ import Header from '@/app/(website)/components/dashboard/Header';
 const DashboardContainer = ({ children }) => {
   const router = useRouter();
   const pathname = usePathname();
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [dashboardData, setDashboardData] = useState({
