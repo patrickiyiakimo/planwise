@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight, AlertCircle } from 'lucide-react';
 
 const LoginForm = ({
   formData,
   errors,
+  apiError,
   isLoading,
   googleLoading,
   onChange,
@@ -18,11 +19,36 @@ const LoginForm = ({
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+      {/* Logo */}
+      <div className="text-center mb-8">
+        <a href="/" className="inline-flex items-center space-x-2 group">
+          <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            planwise
+          </span>
+        </a>
+      </div>
+
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h1>
+        <p className="text-gray-600">
+          Sign in to continue your academic journey.
+        </p>
+      </div>
+
+      {/* API Error Display - Added exactly like signup form */}
+      {apiError && (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start space-x-3">
+          <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+          <p className="text-sm text-red-600">{apiError}</p>
+        </div>
+      )}
+
       {/* Google Login Button */}
       <button
         onClick={onGoogleLogin}
-        disabled={googleLoading}
-        className="w-full  px-4 py-3 border border-gray-300 rounded-xl flex items-center justify-center space-x-2 hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled={googleLoading || isLoading}
+        className="w-full mb-6 px-4 py-3 border border-gray-300 rounded-xl flex items-center justify-center space-x-2 hover:bg-gray-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {googleLoading ? (
           <span className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></span>
@@ -84,7 +110,7 @@ const LoginForm = ({
                 }
               `}
               placeholder="you@example.com"
-              disabled={isLoading}
+              disabled={isLoading || googleLoading}
             />
           </div>
           {errors.email && (
@@ -102,6 +128,7 @@ const LoginForm = ({
               type="button"
               onClick={onForgotPassword}
               className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+              disabled={isLoading || googleLoading}
             >
               Forgot password?
             </button>
@@ -122,7 +149,7 @@ const LoginForm = ({
                 }
               `}
               placeholder="••••••••"
-              disabled={isLoading}
+              disabled={isLoading || googleLoading}
             />
             <button
               type="button"
@@ -147,7 +174,7 @@ const LoginForm = ({
               checked={formData.rememberMe}
               onChange={onChange}
               className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-              disabled={isLoading}
+              disabled={isLoading || googleLoading}
             />
             <label htmlFor="rememberMe" className="ml-2 text-sm text-gray-600">
               Remember me
@@ -155,17 +182,10 @@ const LoginForm = ({
           </div>
         </div>
 
-        {/* Form Error */}
-        {errors.form && (
-          <div className="p-3 bg-red-50 border border-red-200 rounded-xl">
-            <p className="text-sm text-red-600 text-center">{errors.form}</p>
-          </div>
-        )}
-
         {/* Submit Button */}
         <button
           type="submit"
-          disabled={isLoading}
+          disabled={isLoading || googleLoading}
           className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-xl hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center group"
         >
           {isLoading ? (
@@ -185,6 +205,7 @@ const LoginForm = ({
         <button
           onClick={onSignupRedirect}
           className="text-indigo-600 hover:text-indigo-700 font-medium inline-flex items-center"
+          disabled={isLoading || googleLoading}
         >
           Create free account
           <ArrowRight className="w-4 h-4 ml-1" />

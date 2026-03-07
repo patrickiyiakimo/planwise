@@ -2,8 +2,9 @@
 
 import React from 'react';
 import TaskCard from './TaskCard';
+import { CheckCircle } from 'lucide-react';
 
-const TaskList = ({ tasks, view, onStatusChange, onProgressUpdate, onDeleteTask, onUpdateTask }) => {
+const TaskList = ({ tasks, view, onStatusChange, onProgressUpdate, onDeleteTask, onUpdateTask, setShowCreateModal }) => {
   if (tasks.length === 0) {
     return (
       <div className="text-center py-12">
@@ -12,7 +13,7 @@ const TaskList = ({ tasks, view, onStatusChange, onProgressUpdate, onDeleteTask,
         </div>
         <h3 className="text-lg font-medium text-gray-900 mb-2">No tasks found</h3>
         <p className="text-gray-500 mb-6">Get started by creating your first task</p>
-        <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+        <button onClick={() => setShowCreateModal(true)} className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
           Create New Task
         </button>
       </div>

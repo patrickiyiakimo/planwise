@@ -164,6 +164,8 @@ const CreateTaskModal = ({ isOpen, onClose, onCreateTask, courses }) => {
                     }`}
                   >
                     <option value="">Select a course</option>
+                    <option value="Math">Math</option>
+                    <option value="Science">Science</option>
                     {courses.map(course => (
                       <option key={course} value={course}>{course}</option>
                     ))}

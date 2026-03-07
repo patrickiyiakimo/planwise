@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { 
-  CheckCircle, 
+  // CheckCircle, 
   Clock, 
   AlertCircle, 
   Calendar, 
@@ -12,7 +12,8 @@ import {
   Edit,
   Trash2,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  CheckCircle
 } from 'lucide-react';
 
 const TaskCard = ({ task, view, onStatusChange, onProgressUpdate, onDelete, onUpdate }) => {

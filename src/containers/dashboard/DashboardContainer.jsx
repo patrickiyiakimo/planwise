@@ -11,20 +11,11 @@ import TasksWidget from '@/app/(website)/components/dashboard/TasksWidget';
 import StatsCards from '@/app/(website)/components/dashboard/StatsCards';
 import Sidebar from '@/app/(website)/components/dashboard/Sidebar';
 import Header from '@/app/(website)/components/dashboard/Header';
-// import Sidebar from '@/components/dashboard/Sidebar';
-// import Header from '@/components/dashboard/Header';
-// import StatsCards from '@/components/dashboard/StatsCards';
-// import TasksWidget from '@/components/dashboard/TasksWidget';
-// import SummariesWidget from '@/components/dashboard/SummariesWidget';
-// import ProgressWidget from '@/components/dashboard/ProgressWidget';
-// import CalendarWidget from '@/components/dashboard/CalendarWidget';
-// import ActivityFeed from '@/components/dashboard/ActivityFeed';
-// import StudyGroupsWidget from '@/components/dashboard/StudyGroupsWidget';
 
 const DashboardContainer = ({ children }) => {
   const router = useRouter();
   const pathname = usePathname();
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [dashboardData, setDashboardData] = useState({
@@ -48,19 +39,6 @@ const DashboardContainer = ({ children }) => {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // // Mock user data
-      // setUser({
-      //   id: '1',
-      //   name: 'Alex Johnson',
-      //   email: 'alex.johnson@university.edu',
-      //   plan: 'Pro',
-      //   avatar: 'AJ',
-      //   joinDate: '2024-01-15',
-      //   university: 'Stanford University',
-      //   course: 'Computer Science',
-      //   year: '3rd Year'
-      // });
-
       //update to use fullname from localStorage
       const storedUser = JSON.parse(localStorage.getItem('user'));
       setUser({
@@ -256,10 +234,6 @@ const DashboardContainer = ({ children }) => {
     router.push('/dashboard/study-session');
   };
 
-  // const handleLogout = () => {
-  //   router.push('/');
-  // };
-
   //handle logout with API call
   const handleLogout = async () => {
     try {     
@@ -308,21 +282,11 @@ const DashboardContainer = ({ children }) => {
 
       {/* Main Content */}
       <div className={`flex-1 transition-all duration-300 ${sidebarCollapsed ? 'ml-0 md:ml-20' : 'ml-10 md:ml-64'}`}>
-        {/* <Header
-          user={user}
-          onToggleSidebar={toggleSidebar}
-        /> */}
 
         <main className="p-2">
           {isMainDashboard ? (
             // Main Dashboard View
             <div className="space-y-6">
-              {/* Welcome Banner */}
-              {/* <div className="bg-gradient-to-r mt-10 from-indigo-600 to-blue-600 rounded-2xl p-6 text-white">
-                <h1 className="text-2xl font-bold mb-2">Welcome back, {user.fullname}! 👋</h1>
-                <p className="text-indigo-100">Here's your academic overview for today. You're making great progress!</p>
-              </div> */}
-
               <div className="space-y-6">
               {/* Welcome Banner - Now using user.fullname */}
               <div className="bg-gradient-to-r mt-10 from-indigo-600 to-blue-600 rounded-2xl p-6 text-white">
