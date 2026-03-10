@@ -2,8 +2,9 @@
 
 import React from 'react';
 import CourseCard from './CourseCard';
+import { BookOpen } from 'lucide-react';
 
-const CourseGrid = ({ courses, view, onViewCourse }) => {
+const CourseGrid = ({ courses, view, onViewCourse, setShowCourseForm }) => {
   if (courses.length === 0) {
     return (
       <div className="text-center py-12">
@@ -12,7 +13,9 @@ const CourseGrid = ({ courses, view, onViewCourse }) => {
         </div>
         <h3 className="text-lg font-medium text-gray-900 mb-2">No courses found</h3>
         <p className="text-gray-500 mb-6">Get started by adding your first course</p>
-        <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+        <button  
+        onClick={() => setShowCourseForm(true)}
+        className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
           Add Course
         </button>
       </div>

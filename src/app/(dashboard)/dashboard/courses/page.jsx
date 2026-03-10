@@ -1,4 +1,4 @@
-import CoursesContainer from '@/containers/dashboard/CoursesContainer';
+import CoursesContainer from "@/containers/dashboard/CoursesContainer";
 
 export const metadata = {
   title: 'Courses - Planwise | Student Planning App',

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Award, Target, TrendingUp, BookOpen, Star, TrendingDown } from 'lucide-react';
+import { Award, Target, TrendingUp, Star, TrendingDown, BookOpen } from 'lucide-react';
 
 const PerformanceOverview = ({ data }) => {
   const cards = [
