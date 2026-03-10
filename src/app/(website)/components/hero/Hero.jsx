@@ -73,7 +73,7 @@ const Hero = ({
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="/signup"
+              <Link href="/signup" target="_blank" rel="noopener noreferrer"
                 onClick={onGetStarted}
                 className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center"
               >
