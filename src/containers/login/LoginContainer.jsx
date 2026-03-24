@@ -72,7 +72,7 @@ const handleSubmit = async (e) => {
       body: JSON.stringify({
         email: formData.email,
         password: formData.password,
-        remember_me: formData.rememberMe // Send the rememberMe value from your form
+        remember_me: formData.rememberMe
       }),
       credentials: 'include',
     });
